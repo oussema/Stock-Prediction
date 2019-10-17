@@ -56,3 +56,19 @@ X_test = np.array(X_test)
 X_test = np.reshape(X_test, (X_test.shape[0],X_test.shape[1],1))
 closing_price = model.predict(X_test)
 closing_price = scaler.inverse_transform(closing_price)
+
+
+
+
+
+
+rms=np.sqrt(np.mean(np.power((valid-closing_price),2)))
+rms
+
+
+#for plotting
+train = new_data[:987]
+valid = new_data[987:]
+valid['Predictions'] = closing_price
+plt.plot(train['Close'])
+plt.plot(valid[['Close','Predictions']])
