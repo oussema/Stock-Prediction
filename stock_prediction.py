@@ -64,8 +64,7 @@ closing_price = scaler.inverse_transform(closing_price)
 
 rms=np.sqrt(np.mean(np.power((valid-closing_price),2)))
 rms
-
-
+import matplotlib.pyplot as plt
 #for plotting
 train = new_data[:987]
 valid = new_data[987:]
